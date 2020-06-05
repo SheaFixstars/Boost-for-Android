@@ -1,0 +1,12 @@
+diff -ur boost_1_70_0.orig/tools/boost_install/boost-install.jam boost_1_70_0/tools/boost_install/boost-install.jam
+--- boost_1_70_0.orig/tools/boost_install/boost-install.jam	2020-06-04 11:23:08.000000000 -0700
++++ boost_1_70_0/tools/boost_install/boost-install.jam	2020-06-04 11:36:05.000000000 -0700
+@@ -137,7 +137,7 @@
+             "  return()"
+             "endif()"
+             ""
+-            "if(BOOST_DETECTED_TOOLSET AND NOT BOOST_DETECTED_TOOLSET STREQUAL \"$(toolset)\")"
++            "if(NOT Boost_COMPILER AND BOOST_DETECTED_TOOLSET AND NOT BOOST_DETECTED_TOOLSET STREQUAL \"$(toolset)\")"
+             "  _BOOST_SKIPPED(\"$(fname)\" \"$(toolset), detected ${BOOST_DETECTED_TOOLSET}, set Boost_COMPILER to override\")"
+             "  return()"
+             "endif()"
